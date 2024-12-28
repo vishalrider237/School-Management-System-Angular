@@ -4,7 +4,7 @@ import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import { StorageServiceService } from './storage-service.service';
 
 const BASE_URL = ['https://school-management-java-appreciative-raven-xt.cfapps.us10-001.hana.ondemand.com/'];
-export const AUTH_HEADER = 'Authorization';
+export const AUTH_HEADER = 'authorization';
 @Injectable({
   providedIn: 'root',
 })
@@ -24,12 +24,21 @@ export class AuthService {
       .pipe(
         tap((__) => this.log('User Authentication')),
         map((res: HttpResponse<any>) => {
-          this.storage.saveUser(res.body);
-          const tokenLength = res.headers.get(AUTH_HEADER).length;
-          const bearerToken = res.headers
-            .get(AUTH_HEADER)
-            .substring(7, tokenLength);
-          this.storage.saveToken(bearerToken);
+          // Save user details and token to local storage
+          const { UserId, role } = res.body;
+
+          // Save only UserId and role in the storage service
+          const user = { UserId, role };
+          this.storage.saveUser(user);
+          console.log(res.body);  // Log the response body for debugging
+
+          // Extract token from the response body
+          const token = res.body.token;
+          
+          if (token) {
+            this.storage.saveToken(token);  // Save token to local storage
+          }
+
           return res;
         })
       );

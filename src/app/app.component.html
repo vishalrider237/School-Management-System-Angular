@@ -1,0 +1,90 @@
+<div *ngIf="!isAdminLoggedIn && !isStudentLoggedIn">
+  <!-- Common Navbar -->
+  <mat-toolbar color="primary" class="custom-toolbar">
+    <div class="navbar-container">
+      <!-- Title -->
+      <div class="navbar-brand">
+        <mat-icon>school</mat-icon>
+        <span routerLink="/home">School Management System</span>
+      </div>
+
+      <!-- Spacer -->
+      <div class="spacer"></div>
+
+      <!-- Buttons -->
+      <div class="navbar-buttons">
+        <button mat-button routerLink="/login" routerLinkActive="active">
+          <mat-icon>person</mat-icon> Login
+        </button>
+        
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+<!-- Admin Dashboard Navbar -->
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="primary" class="custom-toolbar">
+    <div class="navbar-container">
+      <!-- Dashboard Title -->
+      <div class="navbar-brand">
+        <mat-icon>dashboard</mat-icon>
+        <span routerLink="/admin/dashboard">Dashboard</span>
+        
+      </div>
+
+      <!-- Spacer -->
+      <div class="spacer"></div>
+      <div class="navbar-buttons">
+        <button mat-button routerLink="/admin/allStudents" routerLinkActive="active">
+          <mat-icon>group</mat-icon> Students
+        </button>
+      </div>
+      <div class="navbar-buttons">
+        <button mat-button routerLink="/admin/leaves" routerLinkActive="active">
+          <mat-icon>event</mat-icon> Leaves
+        </button>
+      </div>
+      <div class="navbar-buttons">
+        <button mat-button routerLink="/admin/createStudent" routerLinkActive="active">
+          <mat-icon>person_add</mat-icon> Create Student
+        </button>
+      </div>
+      <!-- Logout Button -->
+      <div class="navbar-buttons">
+        <button mat-button (click)="logout()">
+          <mat-icon>logout</mat-icon> Logout
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+<!-- Student Dashboard Navbar -->
+<div *ngIf="isStudentLoggedIn">
+  <mat-toolbar color="primary" class="custom-toolbar">
+    <div class="navbar-container">
+      <!-- Dashboard Title -->
+      <div class="navbar-brand">
+        <mat-icon>dashboard</mat-icon>
+        <span routerLink="/student/dashboard">Dashboard</span>
+      </div>
+
+      <!-- Spacer -->
+      <div class="spacer"></div>
+      <div class="navbar-buttons">
+        <button mat-button routerLink="/student/leave">
+          <mat-icon>event</mat-icon> Apply Leave
+        </button>
+      </div>
+      <!-- Logout Button -->
+      <div class="navbar-buttons">
+        <button mat-button (click)="logout()">
+          <mat-icon>logout</mat-icon> Logout
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>

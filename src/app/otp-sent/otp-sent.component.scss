@@ -1,0 +1,127 @@
+// Base styles for the container
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Center vertically
+}
+
+.otp-form-container {
+  background: rgba(35, 40, 45, 0.8); // White background for the form
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; // Limit max width to 400px
+  text-align: center;
+}
+
+.form-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3498db; // Use a blue color for the header
+  margin-bottom: 20px;
+}
+
+.otp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Add spacing between the form fields
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555; // Darker color for labels
+}
+
+.input-icon-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 4px;
+  background-color: white;
+}
+
+.input-icon {
+  color: #3498db;
+  margin-right: 10px; // Spacing between icon and input
+}
+
+.input-field {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  flex: 1; // Ensures the input takes the remaining space
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #3498db; // Focus effect with blue color
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 40%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &.send-otp {
+    background-color: #3498db; // Blue color for Send OTP
+  }
+
+  &.send-otp:disabled {
+    background-color: #b0c4de; // Light disabled state
+  }
+
+  &.validate-otp {
+    background-color: #2ecc71; // Green color for Validate OTP
+  }
+
+  &.validate-otp:disabled {
+    background-color: #b0e0a1; // Light disabled state
+  }
+
+  &:hover {
+    background-color: #2980b9; // Darker blue when hovered
+  }
+}
+
+.success-message {
+  color: #2ecc71;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.update-password-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+}

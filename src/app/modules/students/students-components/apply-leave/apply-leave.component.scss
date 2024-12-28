@@ -1,0 +1,75 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1px;
+  min-height: 80vh;
+  background: transparent;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+  backdrop-filter: blur(10px); /* Adds a nice frosted glass effect */
+}
+
+mat-card-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #3f51b5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.success {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.error {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+button {
+  display: block;
+  width: 20%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #303f9f;
+  }
+}
+.submit-button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 20px;
+}

@@ -1,0 +1,120 @@
+.table-container {
+    padding: 20px;
+    background-color: transparent; /* Light background for the container */
+    border-radius: 8px; /* Rounded corners for the table container */
+  }
+  
+  mat-card {
+    margin: 20px;
+    background-color: rgba(35, 40, 45, 0.8); /* Darker background with slight transparency */
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(8px); /* Slight blur effect */
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: wheat; /* Title color from login.scss */
+    text-align: center;
+  }
+  
+  mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent; /* Transparent background for the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  mat-header-cell,
+  mat-cell {
+    padding: 12px;
+    text-align: left; /* Ensure left alignment of text in cells */
+    font-size: 14px; /* Slightly smaller font size for better readability */
+  }
+  
+  mat-header-row {
+    background-color: rgba(76, 139, 245, 0.2); /* Light blue background for the header */
+    color: white; /* White text color in the header */
+    font-weight: bold; /* Bold text in the header */
+  }
+  mat-cell button {
+    margin-right: 2px;
+    color: #4a79c8; /* Blue color for icons */
+    background-color: transparent;
+  }
+  
+  mat-cell button:hover {
+    background-color: rgba(76, 139, 245, 0.1); /* Light blue background on hover */
+  }
+  
+  mat-row {
+    transition: background-color 0.3s;
+  }
+  
+  /* Permanent Row Background Color Styling */
+  mat-row:nth-child(odd) {
+    background-color:transparent !important; /* Light gray for odd rows */
+  }
+  
+  mat-row:nth-child(even) {
+    background-color: transparent !important; /* Slightly darker gray for even rows */
+  }
+  
+  mat-cell {
+    color: #4a79c8; /* Blue color for text data */
+    font-weight: 500; /* Slightly bolder font for better visibility */
+  }
+  
+  mat-cell:first-child {
+    font-weight: 600; /* Make the first column (e.g., ID or primary field) stand out more */
+  }
+  
+  mat-header-cell,
+  mat-cell {
+    max-width: 200px; /* Limit the width of the columns */
+  }
+  
+  /* Ensure text wraps properly if the data is long */
+  mat-cell {
+    word-wrap: break-word;
+  }
+  
+  mat-header-row,
+  mat-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Remove hover effect completely */
+  mat-row:hover {
+    background-color: transparent !important;
+  }
+  .custom-paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .custom-paginator button {
+    margin: 0 10px;
+  }
+  
+  .custom-paginator span {
+    font-weight: bold;
+    color: #3f51b5;
+  }
+  .export-button {
+    position: fixed;
+    bottom: 25px;
+    right: 38px;
+    z-index: 1000;
+  
+    button {
+      font-size: 16px;
+    }
+  }
+  
+ 

@@ -1,0 +1,38 @@
+<div class="student-card">
+    <div class="student-card-header">
+      <!-- Displaying a default avatar if no profilePic is provided -->
+      <div class="student-card-title">
+        <h2>{{ student?.name }}</h2>
+      </div>
+    </div>
+  
+    <div class="student-card-content">
+        <div class="student-detail">
+            <strong>Email:</strong> <span>{{ student?.email }}</span>
+          </div>
+      <div class="student-detail">
+        <strong>Address:</strong> <span>{{ student?.address }}</span>
+      </div>
+      <div class="student-detail">
+        <strong>Father's Name:</strong> <span>{{ student?.fatherName }}</span>
+      </div>
+      <div class="student-detail">
+        <strong>Mother's Name:</strong> <span>{{ student?.motherName }}</span>
+      </div>
+      <div class="student-detail">
+        <strong>Gender:</strong> <span>{{ student?.gender }}</span>
+      </div>
+      <div class="student-detail">
+        <strong>Date of Birth:</strong> <span>{{ student?.dateOfBirth | date:'longDate' }}</span>
+      </div>
+      <div class="student-detail">
+        <strong>Class: </strong> <span>{{ student?.studentClass }}</span>
+      </div>
+      
+    </div>
+  
+    <div class="student-card-footer">
+      <button class="update-button" (click)="editStudent(student)">Update Details</button>
+    </div>
+  </div>
+  

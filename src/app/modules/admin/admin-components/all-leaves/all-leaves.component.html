@@ -1,0 +1,44 @@
+<div class="leave-cards-container">
+    <div *ngIf="appliedLeaves.length === 0" class="no-leaves-message">
+        No leaves applied by students.
+      </div>
+    <!-- Loop through each leave application and create a card for each -->
+
+    <div class="leave-item-card" *ngFor="let leave of appliedLeaves">
+      <div class="leave-card-header">
+        <!-- Displaying the leave details -->
+        <div class="leave-card-title">
+          <h2>{{ leave.name }}</h2>
+          <!-- Display leave applicant name -->
+        </div>
+      </div>
+      <!-- Display success or error messages -->
+      <div *ngIf="leave.successMessage" class="message success">
+        {{ leave.successMessage }}
+      </div>
+      <div *ngIf="leave.errorMessage" class="message error">
+        {{ leave.errorMessage }}
+      </div>
+      <div class="leave-card-content">
+        <div class="leave-detail">
+          <strong>Subject:</strong> <span>{{ leave.subject }}</span>
+        </div>
+        <div class="leave-detail">
+          <strong>LeaveFrom:</strong> <span>{{ leave.leavefrom | date : "longDate" }}</span>
+        </div>
+        <div class="leave-detail">
+            <strong>LeaveTo:</strong> <span>{{ leave.leaveto | date : "longDate" }}</span>
+          </div>
+        <div class="leave-detail">
+          <strong>Status:</strong> <span>{{ leave.leaveStatus }}</span>
+        </div>
+        <div class="leave-detail">
+          <strong>Details:</strong> <span>{{ leave.body }}</span>
+        </div>
+        <div class="leave-card-footer">
+          <button class="update-button" (click)="approveLeave(leave)">Approve</button>
+          <button class="reject-button" (click)="rejectLeave(leave)">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,134 @@
+/* Page background color */
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Student card container */
+.student-card {
+  max-width: 500px;  /* Make the card larger */
+  margin: 40px auto;
+  border-radius: 15px;  /* Round corners for a more elegant look */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Larger shadow for a more prominent card */
+  background-color: lightblue;
+  padding: 30px;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  overflow: hidden;
+}
+
+/* Add hover effect */
+.student-card:hover {
+  transform: translateY(-10px); /* Slightly lift the card on hover */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header styling */
+.student-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the header content */
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+
+/* Avatar styling */
+.student-avatar {
+  width: 100px;  /* Slightly bigger avatar */
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;  /* Space between avatar and name */
+}
+
+/* Title styling */
+.student-card-title h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  text-align: center; /* Center the name */
+}
+
+.student-card-title .student-class {
+  font-size: 16px;
+  color: #555;
+  text-align: center; /* Center the class */
+}
+
+/* Card content styling */
+.student-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Individual student details styling */
+.student-detail {
+  display: flex;
+  margin-bottom: 20px; /* Increased gap between label and value */
+  font-size: 16px;
+  color: #555;
+}
+
+/* Strong labels for the details */
+.student-detail strong {
+  font-weight: bold;
+  margin-right: 15px; /* Added space between label and value */
+  color: #333;
+}
+
+/* Footer styling */
+.student-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Update button styling */
+.update-button {
+  background-color: #4CAF50;  /* Green button for visibility */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.update-button:hover {
+  background-color: #45a049;
+}
+/* Student card footer for the Pay Fee button */
+.student-card-footer.payfee-footer {
+  display: flex;
+  justify-content: flex-start; /* Align button to the left */
+  margin-top: 20px;
+}
+
+/* Pay Fee button styling */
+.payfee-button {
+  background-color: red;  /* Red color for Pay Fee button */
+  color: #fff;
+  padding: 10px;
+  margin-right: 420px;
+  margin-bottom: -40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Pay Fee button hover effect */
+.payfee-button:hover {
+  background-color: darkred; /* Darker red when hovering */
+}
+

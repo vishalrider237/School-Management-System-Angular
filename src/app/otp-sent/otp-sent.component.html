@@ -1,0 +1,74 @@
+<div class="otp-container">
+  <div class="otp-form-container">
+    <h2 class="form-header">OTP Sent</h2>
+    <p *ngIf="otpSent && otpVerified === false" class="success-message">OTP sent successfully!</p>
+    <p *ngIf="otpVerified === true" class="success-message">OTP verified successfully!</p>
+
+    <form (ngSubmit)="onSubmit()" #otpForm="ngForm" class="otp-form">
+      <!-- Email Field with Icon -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <div class="input-icon-container">
+          <mat-icon class="input-icon">email</mat-icon>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+            (ngModelChange)="onEmailChange()"
+            #emailField="ngModel"
+            class="input-field"
+          />
+        </div>
+        <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <!-- OTP Field with Icon -->
+      <div class="form-group" *ngIf="otpSent">
+        <label for="otp">OTP:</label>
+        <div class="input-icon-container">
+          <mat-icon class="input-icon">vpn_key</mat-icon>
+          <input
+            type="text"
+            id="otp"
+            name="otp"
+            [(ngModel)]="otp"
+            required
+            (ngModelChange)="onOtpChange()"
+            #otpField="ngModel"
+            class="input-field"
+          />
+        </div>
+        <div *ngIf="otpField.invalid && otpField.touched" class="error-message">
+          Please enter the OTP.
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button
+        type="button"
+        [disabled]="!email || emailField.invalid"
+        (click)="sendOtp()"
+        *ngIf="!otpSent"
+        class="submit-button send-otp"
+      >
+        Send OTP
+      </button>
+
+      <button
+        type="button"
+        [disabled]="!otp"
+        (click)="validateOtp()"
+        *ngIf="otpSent"
+        class="submit-button validate-otp"
+      >
+        Validate OTP
+      </button>
+    </form>
+
+    <!-- Messages -->
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<mat-card class="pay-fee-card" *ngIf="showForm">
+  <h2 class="heading">PAY FEE</h2>
+  <form [formGroup]="payFeeForm" (ngSubmit)="submitFee()">
+    <div class="loading-container" *ngIf="isLoading">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+    
+    <!-- Success and Error Messages -->
+    <div *ngIf="successMessage" class="message success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="message error">{{ errorMessage }}</div>
+    
+    <!-- Month -->
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Month</mat-label>
+      <mat-select formControlName="month">
+        <mat-option *ngFor="let month of months" [value]="month">{{ month }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Given By -->
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Given By</mat-label>
+      <input matInput formControlName="givenBy" placeholder="Enter the name">
+    </mat-form-field>
+
+    <!-- Amount -->
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="amount" placeholder="Enter the amount" type="number">
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Enter description"></textarea>
+    </mat-form-field>
+
+    <!-- Date -->
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="createdDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!payFeeForm.valid">Submit</button>
+      <button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</mat-card>

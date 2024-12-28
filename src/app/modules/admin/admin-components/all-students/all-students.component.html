@@ -1,0 +1,109 @@
+<div class="table-container">
+  <mat-card>
+    <mat-table [dataSource]="students">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let student"> {{ student.name }} </mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let student"> {{ student.email }} </mat-cell>
+      </ng-container>
+
+      <!-- Father's Name Column -->
+      <ng-container matColumnDef="fatherName">
+        <mat-header-cell *matHeaderCellDef> Father's Name </mat-header-cell>
+        <mat-cell *matCellDef="let student">
+          {{ student.fatherName }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Mother's Name Column -->
+      <ng-container matColumnDef="motherName">
+        <mat-header-cell *matHeaderCellDef> Mother's Name </mat-header-cell>
+        <mat-cell *matCellDef="let student">
+          {{ student.motherName }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Class Column -->
+      <ng-container matColumnDef="StudentClass">
+        <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
+        <mat-cell *matCellDef="let student">
+          {{ student.studentClass }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Date of Birth Column -->
+      <ng-container matColumnDef="dateOfBirth">
+        <mat-header-cell *matHeaderCellDef> Date of Birth </mat-header-cell>
+        <mat-cell *matCellDef="let student">
+          {{ student.dateOfBirth | date : "dd/MM/yyyy" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+        <mat-cell *matCellDef="let student"> {{ student.address }} </mat-cell>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+        <mat-cell *matCellDef="let student"> {{ student.gender }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="feeStatus">
+        <mat-header-cell *matHeaderCellDef> Fee Status </mat-header-cell>
+        <mat-cell *matCellDef="let student"> 
+          <mat-icon *ngIf="student.feeStatus === 'Paid'" color="primary">check_circle</mat-icon>
+          <mat-icon *ngIf="student.feeStatus !== 'Paid'" color="warn">cancel</mat-icon>
+        </mat-cell>
+      </ng-container>
+      
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let student">
+          <button mat-icon-button (click)="editStudent(student)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openDeleteDialog(student)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" routerLink="/admin/fee/{{student.id}}">
+            <mat-icon>payment</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Table Header and Rows -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <div class="custom-paginator">
+      <button mat-icon-button (click)="prevPage()" [disabled]="pageIndex <= 0">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <span>Page {{ pageIndex + 1 }} of {{ totalPages }}</span>
+      <button mat-icon-button (click)="nextPage()" [disabled]="pageIndex >= totalPages - 1">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+    
+  </mat-card>
+  <div class="export-button">
+    <button mat-raised-button [matMenuTriggerFor]="exportMenu" color="primary" [disabled]="!studentsLoaded">
+      Export
+    </button>
+    <mat-menu #exportMenu="matMenu">
+      <button mat-menu-item (click)="exportAsPDF()">Export as PDF</button>
+      <button mat-menu-item (click)="exportAsExcel()">Export as Excel</button>
+    </mat-menu>
+  </div>
+</div>

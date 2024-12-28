@@ -1,0 +1,154 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+.error-text {
+  color: #dc3545; /* Red color for error text */
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.login-form {
+  background: rgba(35, 40, 45, 0.8); /* Darker background with slight transparency */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  backdrop-filter: blur(8px); /* Slight blur effect for a softer background */
+}
+
+
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color:wheat
+}
+
+/* Success Message Styling */
+.message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight:300;
+}
+
+.success {
+  background-color: #28a745; /* Green for success */
+  color:black
+}
+
+.error {
+  background-color: #dc3545; /* Red for error */
+  color:black
+}
+/* Add styles for the register link below the login button */
+/* Style for the Register link */
+.register-link {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.register-link p {
+  color: #b6b0b0; /* Dark gray color for the paragraph text */
+  font-size: 14px;
+}
+
+.register-link-text {
+  color: #4c8bf5; /* Blue color for the link */
+  font-weight: 500;
+  text-decoration: none; /* Remove underline */
+}
+
+.register-link-text:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+
+.form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color:whitesmoke;
+  font-weight: bold; 
+  margin-bottom: 6px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+mat-icon {
+  margin-right: 8px;
+  color: #4a79c8;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #c0a3a3;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  margin-top: 0;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #4c8bf5;
+  outline: none;
+}
+
+button.login-btn {
+  width: 30%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+}
+
+button.login-btn:hover {
+  background-color: #3c76d0;
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button.login-btn {
+    width: 30%;
+  }
+}

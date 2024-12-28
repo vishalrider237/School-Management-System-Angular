@@ -1,0 +1,125 @@
+<div class="register-container">
+    <div class="register-form">
+      <h2>Update Student</h2>
+  
+      <div *ngIf="isLoading" class="loading-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+  
+      <div *ngIf="successMessage" class="message success">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="message error">
+        {{ errorMessage }}
+      </div>
+  
+      <form [formGroup]="registerForm">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">
+            <mat-icon>person</mat-icon> Name
+          </label>
+          <input type="text" id="name" formControlName="name" placeholder="Enter your name" required />
+          <div *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].invalid">
+            <small class="error-text" *ngIf="registerForm.controls['name'].errors?.['required']">
+              Name is required
+            </small>
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">
+            <mat-icon>mail</mat-icon> Email
+          </label>
+          <input type="email" id="email" formControlName="email" placeholder="Enter your email" required />
+          <div *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid">
+            <small class="error-text" *ngIf="registerForm.controls['email'].errors?.['required']">
+              Email is required
+            </small>
+            <small class="error-text" *ngIf="registerForm.controls['email'].errors?.['email']">
+              Please enter a valid email
+            </small>
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">
+            <mat-icon>lock</mat-icon> Password
+          </label>
+          <input type="password" id="password" formControlName="password" placeholder="Enter your password" required />
+          <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+            <small class="error-text" *ngIf="registerForm.controls['password'].errors?.['required']">
+              Password is required
+            </small>
+          </div>
+        </div>
+  
+        <!-- Father's Name -->
+        <div class="form-group">
+          <label for="fatherName">
+            <mat-icon>person</mat-icon> Father's Name
+          </label>
+          <input type="text" id="fatherName" formControlName="fatherName" placeholder="Enter father's name" required />
+        </div>
+  
+        <!-- Mother's Name -->
+        <div class="form-group">
+          <label for="motherName">
+            <mat-icon>person</mat-icon> Mother's Name
+          </label>
+          <input type="text" id="motherName" formControlName="motherName" placeholder="Enter mother's name" required />
+        </div>
+  
+        <!-- Student Class -->
+        <div class="form-group">
+          <label for="studentClass">
+            <mat-icon>school</mat-icon> Class
+          </label>
+          <input type="text" id="studentClass" formControlName="studentClass" placeholder="Enter class" required />
+        </div>
+  
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="dateOfBirth">
+            <mat-icon>calendar_today</mat-icon> Date of Birth
+          </label>
+          <input type="date" id="dateOfBirth" formControlName="dateOfBirth" required />
+        </div>
+  
+        <!-- Address -->
+        <div class="form-group">
+          <label for="address">
+            <mat-icon>home</mat-icon> Address
+          </label>
+          <textarea id="address" formControlName="address" placeholder="Enter your address" rows="3" required></textarea>
+        </div>
+  
+        <!-- Gender -->
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" formControlName="gender" [value]="'male'" /> Male
+            </label>
+            <label class="radio-option">
+              <input type="radio" formControlName="gender" [value]="'female'" /> Female
+            </label>
+            <label class="radio-option">
+              <input type="radio" formControlName="gender" [value]="'other'" /> Other
+            </label>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid" (click)="onSubmit()">
+            Update
+          </button>
+          <button type="button" mat-button (click)="onClose()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

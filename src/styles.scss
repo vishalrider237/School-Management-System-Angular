@@ -1,0 +1,16 @@
+/* src/styles.scss */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    background-image: url('/assets/school-image.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #fff;
+  }
+  

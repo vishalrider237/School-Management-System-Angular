@@ -1,0 +1,55 @@
+<div class="login-container">
+  <div class="login-form">
+    <h2>LOGIN</h2>
+
+    <!-- Success and Error Messages -->
+    <div *ngIf="successMessage" class="message success">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="message error">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">
+          <mat-icon>mail</mat-icon> Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          required
+        />
+        <div *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+          <small class="error-text" *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</small>
+          <small class="error-text" *ngIf="loginForm.controls['email'].errors?.['email']">Please enter a valid email</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          <mat-icon>lock</mat-icon> Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+          required
+        />
+        <div *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+          <small class="error-text" *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</small>
+        </div>
+      </div>
+
+      <button type="submit" class="login-btn" [disabled]="loginForm?.invalid">Login</button>
+
+      <!-- Don't have an account? Register link below login button -->
+      <div class="register-link">
+        <a routerLink="/otp" class="register-link-text">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>

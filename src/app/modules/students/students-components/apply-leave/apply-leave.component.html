@@ -1,0 +1,102 @@
+<div class="form-container">
+  <mat-card>
+    <mat-card-title>Student Leave Application</mat-card-title>
+    <div *ngIf="isLoading" class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="successMessage" class="message success">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="message error">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="leaveForm">
+      <!-- Success and Error Messages -->
+
+      <!-- Subject -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Subject</mat-label>
+        <input
+          matInput
+          formControlName="subject"
+          placeholder="Enter the subject of your leave"
+        />
+        <mat-error
+          *ngIf="
+            leaveForm.get('subject')?.invalid &&
+            leaveForm.get('subject')?.touched
+          "
+        >
+          Subject is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Body -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Body</mat-label>
+        <textarea
+          matInput
+          formControlName="body"
+          placeholder="Write your leave application"
+        ></textarea>
+        <mat-error
+          *ngIf="
+            leaveForm.get('body')?.invalid && leaveForm.get('body')?.touched
+          "
+        >
+          Body is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Leave From</mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerFrom"
+          formControlName="leavefrom"
+          placeholder="Select leave start date"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="pickerFrom"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #pickerFrom></mat-datepicker>
+        <mat-error *ngIf="leaveForm.get('leaveFrom')?.invalid && leaveForm.get('leaveFrom')?.touched">
+          Leave from date is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Leave To -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Leave To</mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerTo"
+          formControlName="leaveto"
+          placeholder="Select leave end date"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="pickerTo"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #pickerTo></mat-datepicker>
+        <mat-error *ngIf="leaveForm.get('leaveTo')?.invalid && leaveForm.get('leaveTo')?.touched">
+          Leave to date is required.
+        </mat-error>
+      </mat-form-field>
+      <!-- Loader and Submit Button -->
+      <div class="submit-button-container">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="leaveForm.invalid || isLoading"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <div *ngIf="isLoading" class="loader"></div>
+      </div>
+    </form>
+  </mat-card>
+</div>

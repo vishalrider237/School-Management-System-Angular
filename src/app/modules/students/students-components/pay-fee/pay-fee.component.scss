@@ -1,0 +1,75 @@
+.pay-fee-card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f4f8; // Light pastel background color
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Slightly more subtle shadow
+  border-radius: 10px; // Soft rounded corners for a modern look
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #4caf50; // Green, which is calming and energetic at the same time
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-label {
+  color: #3e4e59; // Darker shade for label text for better contrast and readability
+}
+
+.mat-input-element {
+  background-color: #ffffff; // White background for input fields
+  border-radius: 5px; // Rounded input borders for a softer look
+  padding: 8px 12px;
+  color: #3e4e59; // Dark text color for readability
+}
+
+.mat-input-element:focus {
+  border-color: #4caf50; // Green focus effect for better interaction
+}
+
+.mat-select-trigger {
+  background-color: #ffffff; // White background for the select input
+  color: #3e4e59; // Dark color for the text in the select input
+}
+
+.mat-form-field-underline {
+  background-color: #4caf50; // Green underline when focused
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.success {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.error {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+

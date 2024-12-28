@@ -4,7 +4,6 @@ import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import { StorageServiceService } from './storage-service.service';
 
 const BASE_URL = ['https://school-management-java-appreciative-raven-xt.cfapps.us10-001.hana.ondemand.com/'];
-export const AUTH_HEADER = 'authorization';
 @Injectable({
   providedIn: 'root',
 })

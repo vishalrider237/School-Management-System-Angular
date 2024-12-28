@@ -1,5 +1,5 @@
 # SchoolManagementSystem
-deployed app- https://school-management-system-angular-4f7bjpedq.vercel.app/
+deployed app- https://school-management-system-angular-4f7bjpedq.vercel.app/ <br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
 ## Development server

@@ -85,4 +85,9 @@ export class AdminService {
       responseType: 'blob'  // Important to handle Excel files
     });
   }
+  searchStudent(searchDto: any): Observable<any> {
+    return this.http.post(`${BASE_URL}api/admin/search`, searchDto, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 }

@@ -136,4 +136,33 @@ export class AllStudentsComponent implements OnInit{
     a.click();
     window.URL.revokeObjectURL(url);
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim();
+    console.log(filterValue)
+    if (filterValue) {
+      let searchDto: any = {};
+  
+      // Check if it's an email pattern
+      if (filterValue.includes('@')) {
+        searchDto.mail = filterValue;
+      } else {
+        searchDto.name = filterValue;
+      }
+      console.log(searchDto)
+      this.studentService.searchStudent(searchDto).subscribe(
+        (response) => {
+          this.students = response;
+          console.log(response)
+          this.totalPages = Math.ceil(response.totalElements / this.pageSize)
+        },
+        (error) => {
+          console.error('Error searching students:', error);
+          this.snackBar.open('Failed to search students', 'Close', { duration: 3000 });
+        }
+      );
+    } else {
+      // Reload all students if search is cleared
+      this.loadStudents();
+    }
+  }
 }

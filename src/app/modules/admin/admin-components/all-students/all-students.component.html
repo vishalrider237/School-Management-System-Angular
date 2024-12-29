@@ -1,5 +1,12 @@
 <div class="table-container">
   <mat-card>
+    <div class="table-header">
+      <span class="title">STUDENT LIST</span>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Search by Name or Email</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter name or email">
+      </mat-form-field>
+    </div>
     <mat-table [dataSource]="students">
       <!-- Name Column -->
       <ng-container matColumnDef="name">

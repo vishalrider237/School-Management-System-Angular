@@ -116,5 +116,49 @@
       font-size: 16px;
     }
   }
+  .table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    position: relative;
+  
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4A90E2;  // Custom color for the title
+      text-align: center;
+      flex: 1;
+    }
+  
+    .search-bar {
+      width: 300px;
+      position: absolute;
+      right: 0;
+    }
+    
+    mat-label {
+      color:#80b0e8 !important;
+    }
+  
+    input.mat-input-element, 
+    .mat-mdc-input-element {
+      color: white !important;  // Ensures the text being typed is white
+    }
+  
+    // Placeholder text color (before typing)
+    input::placeholder {
+      color: lightgrey;
+    }
+    
+    // Border color when input is focused
+    .mat-mdc-form-field-focus-overlay {
+      border-color: white !important;
+    }
+  }
+  
+  
+  
+  
   
  

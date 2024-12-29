@@ -95,4 +95,54 @@ body {
       color: white;
     }
   }
+  @media only screen and (max-width: 767px) {
+    .custom-toolbar {
+      height: 50px; /* Reduce toolbar height on small screens */
+      padding: 0 16px; /* Adjust padding */
+    }
   
+    .navbar-brand {
+      gap: 8px; /* Reduce space between brand icon and text */
+      
+      mat-icon {
+        font-size: 24px; /* Adjust icon size */
+      }
+  
+      span {
+        font-size: 20px; /* Smaller font size for mobile */
+      }
+    }
+  
+    .navbar-buttons {
+      button {
+        font-size: 12px; /* Smaller button font size */
+        padding: 6px 8px; /* Adjust button padding */
+        mat-icon {
+          font-size: 18px; /* Adjust icon size */
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .navbar-brand {
+      span {
+        font-size: 18px; /* Further reduce text size on very small screens */
+      }
+  
+      mat-icon {
+        font-size: 20px; /* Adjust icon size further */
+      }
+    }
+  
+    .navbar-buttons {
+      button {
+        font-size: 10px; /* Further reduce button font size */
+        padding: 4px 6px; /* Adjust button padding further */
+      }
+    }
+  
+    .spacer {
+      display: none; /* Remove spacer on very small screens to save space */
+    }
+  }

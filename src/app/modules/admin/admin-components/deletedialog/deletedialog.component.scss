@@ -54,3 +54,32 @@
     background-color: #d32f2f;
   }
 }
+@media (max-width: 600px) {
+  /* Adjust popup width for mobile */
+  .delete-popup {
+    max-width: 90%; /* Allow popup to take more width on smaller screens */
+    padding: 16px; /* Reduce padding */
+  }
+
+  /* Reduce font size for the title and content */
+  .popup-title {
+    font-size: 18px; /* Smaller title font size for mobile */
+  }
+
+  .popup-content {
+    font-size: 14px; /* Smaller content font size */
+    margin-bottom: 16px; /* Reduce margin */
+  }
+
+  /* Adjust button layout for mobile */
+  .popup-actions {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduce gap between buttons */
+  }
+
+  /* Button adjustments */
+  .popup-btn {
+    padding: 8px 16px; /* Smaller padding for mobile buttons */
+    font-size: 12px; /* Smaller font size for buttons */
+  }
+}

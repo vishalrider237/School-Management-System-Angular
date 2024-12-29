@@ -141,10 +141,47 @@ button:disabled {
 
 @media (max-width: 480px) {
   .register-form {
-    padding: 20px;
+    padding: 15px;
+    max-width: 100%;
+    /* Reduce padding for mobile */
   }
 
   h2 {
     font-size: 20px;
+    margin-bottom: 15px; /* Reduce space for small screens */
+  }
+
+  .message {
+    padding: 8px;
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .form-group {
+    margin-bottom: 12px; /* Adjust spacing */
+  }
+
+  input,
+  textarea {
+    font-size: 12px; /* Smaller input font size */
+    padding: 8px; /* Reduce padding */
+  }
+
+  label {
+    font-size: 12px; /* Smaller label font */
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+    /* Adjust button padding and font size */
+  }
+
+  .radio-group {
+    gap: 15px;
+    margin-top: 8px;
+  }
+
+  .loading-spinner {
+    margin-bottom: 0.5rem; /* Adjust spinner margin */
   }
 }

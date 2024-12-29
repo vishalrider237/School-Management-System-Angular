@@ -72,4 +72,37 @@
   background-color: #dc3545; /* Red */
   color: white;
 }
+@media (max-width: 600px) {
+  /* Adjust pay fee card width and padding */
+  .pay-fee-card {
+    max-width: 90%; /* Allow card to take more width on smaller screens */
+    padding: 16px; /* Reduce padding */
+  }
 
+  /* Adjust heading font size */
+  .heading {
+    font-size: 22px; /* Smaller font size for title */
+    margin-bottom: 16px; /* Reduce margin */
+  }
+
+  /* Adjust form field margin */
+  .form-field {
+    margin-bottom: 16px; /* Reduce margin */
+  }
+
+  /* Input field adjustments */
+  .mat-input-element {
+    padding: 6px 10px; /* Smaller padding for input fields */
+  }
+
+  /* Button container adjustments */
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduced gap between buttons */
+  }
+
+  /* Adjust message font size */
+  .message {
+    font-size: 12px; /* Smaller font size for messages */
+  }
+}

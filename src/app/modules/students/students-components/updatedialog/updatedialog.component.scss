@@ -148,4 +148,47 @@
       font-size: 20px;
     }
   }
+  @media (max-width: 480px) {
+    .register-form {
+      padding: 20px; /* Adjust padding for smaller screens */
+      width: 90%; /* Ensure form is not too wide */
+      max-width: none; /* Remove max width constraint */
+    }
   
+    h2 {
+      font-size: 20px; /* Adjust font size for small screens */
+    }
+  
+    .form-group {
+      margin-bottom: 12px; /* Reduce margin between form groups */
+    }
+  
+    input,
+    textarea {
+      font-size: 12px; /* Smaller font size for input fields */
+      padding: 8px; /* Less padding for smaller screens */
+    }
+  
+    .radio-group {
+      flex-direction: column; /* Stack radio buttons vertically */
+      gap: 10px; /* Reduced gap between radio buttons */
+    }
+  
+    button {
+      font-size: 14px; /* Adjust button font size */
+      padding: 10px; /* Less padding for smaller screens */
+    }
+  
+    .message {
+      font-size: 12px; /* Smaller font size for messages */
+      padding: 10px; /* Reduce padding in message boxes */
+    }
+  
+    .error-text {
+      font-size: 10px; /* Smaller font size for error messages */
+    }
+  
+    .mat-dialog-container {
+      padding: 15px; /* Less padding inside dialog container */
+    }
+  }

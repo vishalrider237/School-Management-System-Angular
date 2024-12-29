@@ -73,3 +73,31 @@
   color: white;
 }
 
+@media (max-width: 600px) {
+  .pay-fee-card {
+    max-width: 90%;  /* Allow card to take more space on small screens */
+    padding: 15px;  /* Reduce padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 22px;  /* Adjust font size for smaller screens */
+  }
+
+  .form-field {
+    margin-bottom: 15px;  /* Reduce space between fields */
+  }
+
+  .mat-input-element {
+    padding: 8px;  /* Adjust padding for smaller screens */
+  }
+
+  .button-container {
+    flex-direction: column;  /* Stack buttons vertically */
+    gap: 10px;  /* Add some space between buttons */
+  }
+
+  .message {
+    font-size: 12px;  /* Make message text smaller on mobile */
+    padding: 10px;  /* Reduce padding for messages */
+  }
+}

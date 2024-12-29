@@ -132,3 +132,58 @@ body {
   background-color: darkred; /* Darker red when hovering */
 }
 
+@media (max-width: 480px) {
+  /* Adjust student card */
+  .student-card {
+    margin: 20px auto; /* Reduce margin for smaller screens */
+    padding: 20px; /* Reduce padding */
+    max-width: 90%;  /* Reduce card width for small screens */
+  }
+
+  /* Adjust avatar size */
+  .student-avatar {
+    width: 80px; /* Slightly smaller avatar */
+    height: 80px;
+    margin-bottom: 10px; /* Reduced space between avatar and name */
+  }
+
+  /* Adjust header styling */
+  .student-card-title h2 {
+    font-size: 20px; /* Smaller font size for the name */
+  }
+
+  .student-card-title .student-class {
+    font-size: 14px; /* Smaller font size for the class */
+  }
+
+  /* Adjust student detail font size */
+  .student-detail {
+    font-size: 14px; /* Smaller font size for details */
+    margin-bottom: 15px; /* Reduce gap between label and value */
+  }
+
+  /* Adjust button sizes */
+  .update-button {
+    width: 100%;  /* Make the update button full width */
+    padding: 10px; /* Reduced padding */
+    font-size: 14px; /* Smaller font size for button */
+  }
+
+  .payfee-button {
+    width: 100%; /* Make the Pay Fee button full width */
+    padding: 10px; /* Adjust padding */
+    font-size: 14px; /* Smaller font size for button */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 0; /* Adjust bottom margin */
+  }
+
+  /* Adjust card footer */
+  .student-card-footer {
+    justify-content: center; /* Center the footer buttons */
+    margin-top: 15px; /* Reduce margin on small screens */
+  }
+
+  .student-card-footer.payfee-footer {
+    justify-content: center; /* Center Pay Fee button */
+  }
+}

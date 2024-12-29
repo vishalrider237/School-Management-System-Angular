@@ -139,7 +139,7 @@ button.login-btn:hover {
   background-color: #3c76d0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .login-form {
     padding: 20px;
   }
@@ -148,7 +148,36 @@ button.login-btn:hover {
     font-size: 20px;
   }
 
+  .register-link p {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
   button.login-btn {
-    width: 30%;
+    width: 100%; /* Ensure the login button fills the width */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 15px;
+    max-width: 350px; /* Adjust max-width for small devices */
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .register-link p {
+    font-size: 12px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 12px; /* Adjust font size for input fields on small devices */
+  }
+
+  button.login-btn {
+    width: 100%; /* Ensure the login button fills the width */
+    font-size: 14px; /* Adjust button font size */
   }
 }

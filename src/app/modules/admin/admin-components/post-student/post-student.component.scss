@@ -146,4 +146,33 @@
       font-size: 20px;
     }
   }
+  @media (max-width: 480px) {
+    /* Register Form Adjustments */
+    .register-form {
+      padding: 16px; /* Reduced padding */
+    }
   
+    /* Heading Font Size */
+    h2 {
+      font-size: 20px; /* Smaller font size */
+    }
+  
+    /* Form Input Padding and Font Size */
+    input,
+    textarea {
+      padding: 8px; /* Reduced padding for smaller screens */
+      font-size: 12px; /* Smaller font size */
+    }
+  
+    /* Button Adjustments */
+    button.register-btn {
+      width: 100%; /* Full-width button */
+      margin-left: 0; /* Remove margin for better alignment */
+    }
+  
+    /* Radio Group Layout */
+    .radio-group {
+      flex-direction: column; /* Stack radio buttons vertically */
+      gap: 12px; /* Reduced gap between options */
+    }
+  }

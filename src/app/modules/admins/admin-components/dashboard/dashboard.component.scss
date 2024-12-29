@@ -97,3 +97,32 @@ body {
 .update-button:hover {
   background-color: #45a049;
 }
+@media (max-width: 480px) {
+  .student-card {
+    max-width: 90%; /* Reduce the card width for small screens */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .student-card-title h2 {
+    font-size: 18px; /* Smaller title font size */
+  }
+
+  .student-detail {
+    font-size: 14px; /* Smaller font size for student details */
+    margin-bottom: 15px; /* Reduce space between details */
+  }
+
+  .student-detail strong {
+    font-size: 14px; /* Smaller font size for labels */
+  }
+
+  .student-card-footer {
+    margin-top: 15px;
+  }
+
+  .update-button {
+    width: 100%; /* Make the button full-width */
+    padding: 10px; /* Reduce button padding */
+    font-size: 14px; /* Smaller font size for the button */
+  }
+}

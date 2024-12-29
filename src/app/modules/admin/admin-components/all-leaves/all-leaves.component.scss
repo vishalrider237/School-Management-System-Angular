@@ -124,10 +124,52 @@
   .leave-item-card {
     width: calc(50% - 20px);  /* 2 cards per row on small screens */
   }
+
+  .leave-card-title h2 {
+    font-size: 1.2rem;  /* Adjust the card title font size */
+  }
+
+  .leave-detail {
+    font-size: 0.9rem;  /* Slightly reduce font size for small screens */
+  }
+
+  .message {
+    font-size: 12px;  /* Increase font size of messages on small screens */
+  }
+
+  .no-leaves-message {
+    width: 100%;
+    font-size: 1rem;  /* Adjust font size and width for mobile */
+  }
 }
 
 @media (max-width: 480px) {
   .leave-item-card {
     width: 100%;  /* 1 card per row on extra small screens */
+  }
+
+  .leave-card-title h2 {
+    font-size: 1rem;  /* Further reduce card title font size for very small screens */
+  }
+
+  .leave-card-content {
+    margin-bottom: 10px;  /* Reduce margin for smaller screens */
+  }
+
+  .leave-detail {
+    font-size: 0.8rem;  /* Reduce font size further for very small screens */
+  }
+
+  .update-button, .reject-button {
+    font-size: 14px;
+    padding: 8px 16px;  /* Reduce button size */
+  }
+
+  .message {
+    font-size: 10px;  /* Reduce message font size for very small screens */
+  }
+
+  .no-leaves-message {
+    font-size: 0.9rem;  /* Adjust font size for extra small screens */
   }
 }

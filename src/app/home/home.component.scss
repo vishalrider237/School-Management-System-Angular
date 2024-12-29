@@ -78,3 +78,73 @@ button {
   0% { transform: translateY(0); }
   100% { transform: translateY(-20px); }
 }
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  .welcome-title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .student-card {
+    left: 50%; /* Position card in the center on smaller screens */
+    transform: translateX(-50%) translateY(-50%); /* Center both vertically and horizontally */
+    width: 120px; /* Reduce the card's width */
+    height: 100px; /* Reduce the card's height */
+    font-size: 18px;
+  }
+
+  .student-count {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll; /* Prevent the background from being fixed */
+  }
+
+  .home-container {
+    height: auto; /* Adjust height for mobile screens */
+    padding: 20px; /* Add padding for mobile devices */
+  }
+
+  .welcome-section {
+    padding: 20px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .student-card {
+    width: 100px; /* Further reduce the card's width */
+    height: 90px; /* Further reduce the card's height */
+    font-size: 16px;
+  }
+
+  .student-count {
+    font-size: 28px;
+  }
+}

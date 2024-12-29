@@ -156,7 +156,45 @@
       border-color: white !important;
     }
   }
+  @media (max-width: 600px) {
+    /* Reduce padding for mobile view */
+    .table-container {
+      padding: 10px;
+    }
   
+    mat-card {
+      margin: 10px;
+    }
+  
+    mat-card-title {
+      font-size: 18px; /* Smaller font size for mobile */
+    }
+  
+    mat-header-cell,
+    mat-cell {
+      font-size: 12px; /* Smaller font size for mobile */
+      padding: 8px; /* Reduce padding for mobile */
+    }
+  
+    /* Ensure table columns are not too wide */
+    mat-header-cell,
+    mat-cell {
+      max-width: 150px;
+    }
+  
+    .search-bar {
+      width: 200px; /* Adjust search bar width */
+    }
+  
+    .custom-paginator {
+      flex-direction: column;
+    }
+  
+    .export-button {
+      bottom: 10px;
+      right: 20px;
+    }
+  }
   
   
   
